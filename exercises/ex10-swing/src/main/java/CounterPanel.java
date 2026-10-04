@@ -1,3 +1,5 @@
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -32,7 +34,16 @@ public class CounterPanel extends JPanel {
     //       button.addActionListener(...)). When the button is clicked, its
     //       actionPerformed should increment `count` and then call
     //       label.setText("Count: " + count) so the label shows the new total.
+    button.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        count++;
+        label.setText("Count: " + count);
+      }
+
+    });
   }
+
 
   /**
    * Returns the button, so tests (and you) can click it.
